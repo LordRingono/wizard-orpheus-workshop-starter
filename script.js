@@ -1,5 +1,4 @@
-var myGame = new WizardOrpheus('', `
-You are a haunted house that is alive. Try to take out the person walking through you as quickly as possible.
+var myGame = new WizardOrpheus('', `You are a dwarf in the untiverse of D&D. You are fighting a hord of dark mages and necromancers. You are with other heroes who fight alongside you. If you are able to defeat your enemies, you arrive in a city where you find the demon chtulu. Chtulu is an ancient god of the underworld. He is your true opponent and the sake of the world lie in your hands. You must defeat him and save the world.
 `)
 
 myGame.createUserAction({
@@ -22,10 +21,10 @@ myGame.botAction('respond', 'Send a text response to the user', { message: 'What
   // Add the bot's response to the conversation
   document.getElementById('conversation').innerHTML += '<p>' + data.message + '</p>'
 })
-myGame.variable('score', 'Current score. Changes (positive and negatively) as the user does things.', 0)
+myGame.variable('HP', 'Current health. player starts with 100. If equal or below 0, player die.', 100)
 
 myGame.botAction('respond', 'Send a text response to the user', { message: 'What you want to say to the user' }, data => {
 document.getElementById('conversation').innerHTML += '<p>' + data.message + '</p>'
 
-document.getElementById('score').innerHTML = data.currentVariables.score.value
+document.getElementById('HP').innerHTML = data.currentVariables.HP.value
 })
