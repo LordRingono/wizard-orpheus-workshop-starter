@@ -26,3 +26,13 @@ document.getElementById('HP').innerHTML = data.currentVariables.HP.value
 
 document.getElementById('SP').innerHTML = data.currentVariables.SP.value
 })
+  myGame.botAction('opponentAttack', "The opponent attacks the user, inflicting damage and the bot prompt a response with what happened", {
+  attackMethod: "A two sentence description of how the opponent attacks the user.",
+  attackWeapon: "A single noun of what the opponent used to attack. Ex. 'candlestick'",
+  damage: "A number of how much damage the opponent inflicted on the user"
+}, data => {
+  document.body.innerHTML += '<p><i>Opponent attacks using <strong>' +
+  data.attackWeapon + '</strong> inflicting <strong>' + data.damage +
+  '</strong></i> - ' + data.attackMethod + '</p>'
+document.getElementById('HP').innerHTML = data.currentVariables.HP.value
+})
