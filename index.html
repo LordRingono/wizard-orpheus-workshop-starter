@@ -5,19 +5,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>The dwarf</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"
+  >
 </head>
 
 <body>
   <p>Your job is to basically save the world.</p>
-  <div id="conversation">
+  <div id="conversation" class="box">
   </div>
 
-  <textarea id="input" placeholder="Type here..."></textarea>
+  <textarea id="input" placeholder="Type here..." class="box"></textarea>
   <br>
   <i>Press enter to submit...</i>
-
-  <p>Health: <span id="HP">100</span></p>
+  <div>
+    <p>Health: <span id="HP">100</span></p>
+    <p>Stamina: <span id="SP">100</span></p>
+  </div>
 
   <script src="https://wizard-orpheus.hackclub.dev/wizard_orpheus.js"></script>
   <script src="script.js"></script>

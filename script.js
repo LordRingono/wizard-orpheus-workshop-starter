@@ -17,14 +17,12 @@ document.getElementById('input').addEventListener('keyup', function(e) {
     document.getElementById('input').value = ''
   }
 })
-myGame.botAction('respond', 'Send a text response to the user', { message: 'What you want to say to the user' }, data => {
-  // Add the bot's response to the conversation
-  document.getElementById('conversation').innerHTML += '<p>' + data.message + '</p>'
-})
 myGame.variable('HP', 'Current health. player starts with 100. If equal or below 0, player die.', 100)
-
-myGame.botAction('respond', 'Send a text response to the user', { message: 'What you want to say to the user' }, data => {
+myGame.variable('SP', 'Current stamina. player starts with 100. If equal or below 0, player must rest.', 100)
+myGame.botAction('respond', 'Send a text response to the user', { message: 'What happened. Update HP if player got attacked (-) or healed (+). update SP if player moved (-) or rested (-).' }, data => {
 document.getElementById('conversation').innerHTML += '<p>' + data.message + '</p>'
 
 document.getElementById('HP').innerHTML = data.currentVariables.HP.value
+
+document.getElementById('SP').innerHTML = data.currentVariables.SP.value
 })
